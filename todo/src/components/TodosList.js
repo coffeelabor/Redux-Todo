@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { addNewTodo } from "../actions/index";
 
-class TodosList extends React.Component {
+class TodoList extends React.Component {
   state = {
     newTodo: ""
   };
@@ -19,12 +19,32 @@ class TodosList extends React.Component {
   };
 
   render() {
+    //   console.log(props.todos)
     return (
       <div>
         <h1>Test</h1>
+        {this.props.todos.map(todo => {
+          return <div>{todo.value}</div>;
+        })}
+        <input
+          type="text"
+          value={this.state.addTodo}
+          onChange={this.handleChanges}
+          placeholder="Add New member"
+        />
+        <button onClick={this.addTodo}>Add Todo</button>
       </div>
     );
   }
 }
 
-export default TodosList;
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { addNewTodo }
+)(TodoList);

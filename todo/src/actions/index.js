@@ -1,5 +1,5 @@
 export const ADD_NEW_TODO = "ADD_NEW_TODO";
-export const addNewtodo = newTodo => {
+export const addNewTodo = newTodo => {
   return {
     type: newTodo,
     payload: newTodo
