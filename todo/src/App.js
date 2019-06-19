@@ -1,6 +1,6 @@
 import React from "react";
 
-import TodoList from "./components/TodosList";
+import TodoContainer from "./components/TodoContainer";
 
 import "./App.css";
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <TodoList />
+      <TodoContainer />
     </div>
   );
 };
