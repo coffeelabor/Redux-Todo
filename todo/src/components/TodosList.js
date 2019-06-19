@@ -27,6 +27,7 @@ class TodoList extends React.Component {
           return <div>{todo.value}</div>;
         })}
         <input
+          name="newTodo"
           type="text"
           value={this.state.addTodo}
           onChange={this.handleChanges}
